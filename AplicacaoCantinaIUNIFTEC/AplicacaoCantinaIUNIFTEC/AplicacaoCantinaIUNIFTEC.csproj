@@ -46,14 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadastrarProdutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarProdutoForm.Designer.cs">
+      <DependentUpon>CadastrarProdutoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadastrarProdutoForm.resx">
+      <DependentUpon>CadastrarProdutoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
