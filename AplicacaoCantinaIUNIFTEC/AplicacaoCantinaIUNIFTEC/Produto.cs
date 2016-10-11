@@ -23,9 +23,9 @@ namespace AplicacaoCantinaIUNIFTEC
             this.DataValidade = dataValidade;
         }
         
-        public override string ToString()
+        public string ToCSV()
         {
-            return $"Produto: {Nome}, Codigo: {Codigo}, Preço: {Preco}, Data de Fabricação: {DataFabricacao}, Data de Validade: {DataValidade}";
+            return $"{Nome};{Codigo};{Preco};{DataFabricacao};{DataValidade}";
         }
     }
 }

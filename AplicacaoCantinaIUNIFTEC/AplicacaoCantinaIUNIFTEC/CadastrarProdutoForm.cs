@@ -36,6 +36,6 @@ namespace AplicacaoCantinaIUNIFTEC
                 CadastrarItem_button.Enabled = false;
                 MessageBox.Show("Preenchimento dos campos estão Inválidos !", "Campos estão vazios/Preço Inválido/Datas Inválidas", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }// Botão Validar
     }
 }

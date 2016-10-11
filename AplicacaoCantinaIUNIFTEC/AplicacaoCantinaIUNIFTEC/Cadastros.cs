@@ -8,7 +8,7 @@ namespace AplicacaoCantinaIUNIFTEC
 {
     class Cadastro
     {
-        public List<Produto> ProdutosCadastrados = new List<Produto>();
+        public static List<string> ProdutosCadastrados = new List<string>();
 
         public void CadastrarNovoProduto(string nome, string codigo, string preco, string dataFabricacao, string dataValidade)
         {
@@ -20,7 +20,7 @@ namespace AplicacaoCantinaIUNIFTEC
 
         private void AdicionarProdutoLista(Produto produto)
         {
-            ProdutosCadastrados.Add(produto);
+            ProdutosCadastrados.Add(produto.ToCSV());
         }
     }
 }

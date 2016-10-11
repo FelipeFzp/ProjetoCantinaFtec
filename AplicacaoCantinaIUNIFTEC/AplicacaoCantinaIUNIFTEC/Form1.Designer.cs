@@ -35,6 +35,7 @@
             this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@
             this.verProdutosToolStripMenuItem,
             this.deletarToolStripMenuItem,
             this.toolStripSeparator1,
-            this.abrirToolStripMenuItem});
+            this.abrirToolStripMenuItem,
+            this.salvarArquivoToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
             this.toolStripMenuItem1.Text = "Opções";
@@ -93,6 +95,13 @@
             this.abrirToolStripMenuItem.Text = "Abrir Arquivo...";
             this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
             // 
+            // salvarArquivoToolStripMenuItem
+            // 
+            this.salvarArquivoToolStripMenuItem.Name = "salvarArquivoToolStripMenuItem";
+            this.salvarArquivoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.salvarArquivoToolStripMenuItem.Text = "Salvar Arquivo...";
+            this.salvarArquivoToolStripMenuItem.Click += new System.EventHandler(this.salvarArquivoToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +128,7 @@
         private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem salvarArquivoToolStripMenuItem;
     }
 }
 

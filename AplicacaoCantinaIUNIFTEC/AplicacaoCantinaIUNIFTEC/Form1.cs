@@ -30,7 +30,8 @@ namespace AplicacaoCantinaIUNIFTEC
 
         private void verProdutosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            VizualizadorProdutos_form3 form3 = new VizualizadorProdutos_form3();
+            form3.ShowDialog();
         }
 
         private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,6 +43,13 @@ namespace AplicacaoCantinaIUNIFTEC
         {
 
         }
+
+        private void salvarArquivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
+
     }
 }
