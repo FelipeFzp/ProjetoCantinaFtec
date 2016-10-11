@@ -80,5 +80,19 @@ namespace AplicacaoCantinaIUNIFTEC
             doc.AppendChild(produtos);
             doc.Save(local);
         }
+
+        public void AbrirArquivoXML(string local)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(local);
+
+            foreach(XmlNode node in doc.DocumentElement.ChildNodes)
+            {
+                foreach(XmlAttribute attr in node.ChildNodes)
+                {
+
+                }
+            }
+        }
     }
 }

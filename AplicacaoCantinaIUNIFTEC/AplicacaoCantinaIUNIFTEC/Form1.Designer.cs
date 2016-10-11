@@ -37,6 +37,7 @@
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalvarArquivo_saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.AbrirArquivo_openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +137,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salvarArquivoToolStripMenuItem;
         public System.Windows.Forms.SaveFileDialog SalvarArquivo_saveFileDialog;
+        public System.Windows.Forms.OpenFileDialog AbrirArquivo_openFileDialog;
     }
 }
 
