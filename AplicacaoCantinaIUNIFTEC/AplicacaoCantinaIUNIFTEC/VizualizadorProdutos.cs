@@ -20,16 +20,11 @@ namespace AplicacaoCantinaIUNIFTEC
         private void VizualizadorProdutos_form3_Load(object sender, EventArgs e)
         {
             string[] Informacoes;
-            ListViewItem nome = new ListViewItem();
-            foreach(var linha in Cadastro.ProdutosCadastrados)
+            foreach (var linha in Cadastro.ProdutosCadastrados)
             {
                 Informacoes = linha.Split(';');
-                ColunaNome.ListView.Items.Add(Informacoes[0]);
-                nome.Text = Informacoes[0];
-                nome.SubItems.Add("teste");
-                nome.SubItems.Add(Informacoes[2]);
-                nome.SubItems.Add(Informacoes[3]);
-                nome.SubItems.Add(Informacoes[4]);
+                ListViewItem item = new ListViewItem(new[] { $"{Informacoes[0]}", $"{Informacoes[1]}", $"{Informacoes[2]} R$", $"{Informacoes[3]}",$"{Informacoes[4]}"});
+                Produtos_listView.Items.Add(item);
             }
         }
     }

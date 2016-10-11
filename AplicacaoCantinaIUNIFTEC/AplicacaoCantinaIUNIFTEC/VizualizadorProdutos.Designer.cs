@@ -28,13 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Produtos_listView = new System.Windows.Forms.ListView();
             this.ColunaNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColunaCodigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColunaPreco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColunaFabricacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColunaValidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Produtos_listView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
+            // 
+            // Produtos_listView
+            // 
+            this.Produtos_listView.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Produtos_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColunaNome,
+            this.ColunaCodigo,
+            this.ColunaPreco,
+            this.ColunaFabricacao,
+            this.ColunaValidade});
+            this.Produtos_listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Produtos_listView.Location = new System.Drawing.Point(0, 0);
+            this.Produtos_listView.MultiSelect = false;
+            this.Produtos_listView.Name = "Produtos_listView";
+            this.Produtos_listView.Size = new System.Drawing.Size(495, 350);
+            this.Produtos_listView.TabIndex = 1;
+            this.Produtos_listView.UseCompatibleStateImageBehavior = false;
+            this.Produtos_listView.View = System.Windows.Forms.View.Details;
             // 
             // ColunaNome
             // 
@@ -61,23 +79,6 @@
             this.ColunaValidade.Text = "Data de Validade";
             this.ColunaValidade.Width = 97;
             // 
-            // Produtos_listView
-            // 
-            this.Produtos_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ColunaNome,
-            this.ColunaCodigo,
-            this.ColunaPreco,
-            this.ColunaFabricacao,
-            this.ColunaValidade});
-            this.Produtos_listView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Produtos_listView.Location = new System.Drawing.Point(0, 0);
-            this.Produtos_listView.MultiSelect = false;
-            this.Produtos_listView.Name = "Produtos_listView";
-            this.Produtos_listView.Size = new System.Drawing.Size(495, 350);
-            this.Produtos_listView.TabIndex = 0;
-            this.Produtos_listView.UseCompatibleStateImageBehavior = false;
-            this.Produtos_listView.View = System.Windows.Forms.View.Details;
-            // 
             // VizualizadorProdutos_form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,11 +94,11 @@
 
         #endregion
 
+        private System.Windows.Forms.ListView Produtos_listView;
         public System.Windows.Forms.ColumnHeader ColunaNome;
         public System.Windows.Forms.ColumnHeader ColunaCodigo;
         public System.Windows.Forms.ColumnHeader ColunaPreco;
         public System.Windows.Forms.ColumnHeader ColunaFabricacao;
         public System.Windows.Forms.ColumnHeader ColunaValidade;
-        private System.Windows.Forms.ListView Produtos_listView;
     }
 }

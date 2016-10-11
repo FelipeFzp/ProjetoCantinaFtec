@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,16 @@ namespace AplicacaoCantinaIUNIFTEC
 
         private void salvarArquivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SalvarArquivo_saveFileDialog.DefaultExt = ".xml";
+            SalvarArquivo_saveFileDialog.Filter = "Arquivos XML | *.xml";
+            SalvarArquivo_saveFileDialog.Title = "Selecione um local para salvar seu arquivo";
+            DialogResult resultadoJanela = SalvarArquivo_saveFileDialog.ShowDialog();
+            var local = SalvarArquivo_saveFileDialog.FileName;
+            var extensao = Path.GetExtension(local);
+            if (extensao.Equals(".xml") && resultadoJanela.Equals(DialogResult.OK))
+            {
+                Cadastro.SalvarArquivoXML(local);
+            }
         }
 
         #endregion

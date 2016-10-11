@@ -25,9 +25,9 @@ namespace AplicacaoCantinaIUNIFTEC
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Validar_button_Click(object sender, EventArgs e)
         {
-            if (Utilidades.ValidarCamposCadastroProdutos(CampoCodigo_maskedTextBox.Text, CampoDataFabricacao_maskedTextBox.Text, CampoNome_textBox.Text, CampoPreco_textBox.Text, CampoDataValidade_maskedTextBox.Text))
+            if (Cadastro.ValidarCamposCadastroProdutos(CampoCodigo_maskedTextBox.Text, CampoDataFabricacao_maskedTextBox.Text, CampoNome_textBox.Text, CampoPreco_textBox.Text, CampoDataValidade_maskedTextBox.Text))
             {
                 CadastrarItem_button.Enabled = true;
             }
@@ -36,6 +36,6 @@ namespace AplicacaoCantinaIUNIFTEC
                 CadastrarItem_button.Enabled = false;
                 MessageBox.Show("Preenchimento dos campos estão Inválidos !", "Campos estão vazios/Preço Inválido/Datas Inválidas", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }// Botão Validar
+        }
     }
 }

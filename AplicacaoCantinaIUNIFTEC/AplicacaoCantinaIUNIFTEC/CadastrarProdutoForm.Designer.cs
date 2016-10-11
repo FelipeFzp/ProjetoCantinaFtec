@@ -143,10 +143,10 @@
             this.Validar_button.Location = new System.Drawing.Point(28, 194);
             this.Validar_button.Name = "Validar_button";
             this.Validar_button.Size = new System.Drawing.Size(64, 23);
-            this.Validar_button.TabIndex = 5;
+            this.Validar_button.TabIndex = 11;
             this.Validar_button.Text = "Validar";
             this.Validar_button.UseVisualStyleBackColor = true;
-            this.Validar_button.Click += new System.EventHandler(this.button1_Click);
+            this.Validar_button.Click += new System.EventHandler(this.Validar_button_Click);
             // 
             // Opcoes_CadastrarProduto_Form2
             // 

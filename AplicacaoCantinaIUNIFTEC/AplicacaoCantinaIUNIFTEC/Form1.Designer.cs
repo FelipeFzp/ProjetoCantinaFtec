@@ -36,6 +36,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SalvarArquivo_saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +103,11 @@
             this.salvarArquivoToolStripMenuItem.Text = "Salvar Arquivo...";
             this.salvarArquivoToolStripMenuItem.Click += new System.EventHandler(this.salvarArquivoToolStripMenuItem_Click);
             // 
+            // SalvarArquivo_saveFileDialog
+            // 
+            this.SalvarArquivo_saveFileDialog.DefaultExt = "xml";
+            this.SalvarArquivo_saveFileDialog.FileName = "Produtos_DB";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +135,7 @@
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salvarArquivoToolStripMenuItem;
+        public System.Windows.Forms.SaveFileDialog SalvarArquivo_saveFileDialog;
     }
 }
 
