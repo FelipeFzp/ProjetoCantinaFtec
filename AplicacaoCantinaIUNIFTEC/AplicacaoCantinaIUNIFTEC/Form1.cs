@@ -24,7 +24,8 @@ namespace AplicacaoCantinaIUNIFTEC
 
         private void novoProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Opcoes_CadastrarProduto_Form2 form2 = new Opcoes_CadastrarProduto_Form2();
+            form2.ShowDialog();
         }
 
         private void verProdutosToolStripMenuItem_Click(object sender, EventArgs e)

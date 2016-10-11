@@ -11,10 +11,10 @@ namespace AplicacaoCantinaIUNIFTEC
         public string Nome { get; set; }
         public string Codigo { get; set; }
         public float  Preco { get; private set; }
-        public DateTime DataValidade { get; private set; }
-        public DateTime DataFabricacao { get; private set; }
+        public string DataValidade { get; private set; }
+        public string DataFabricacao { get; private set; }
 
-        public Produto(string nome, string codigo , float preco, DateTime dataFabricacao, DateTime dataValidade)
+        public Produto(string nome, string codigo , float preco, string dataFabricacao, string dataValidade)
         {
             this.Nome = nome;
             this.Codigo = codigo;
@@ -22,7 +22,7 @@ namespace AplicacaoCantinaIUNIFTEC
             this.DataFabricacao = dataFabricacao;
             this.DataValidade = dataValidade;
         }
-
+        
         public override string ToString()
         {
             return $"Produto: {Nome}, Codigo: {Codigo}, Preço: {Preco}, Data de Fabricação: {DataFabricacao}, Data de Validade: {DataValidade}";

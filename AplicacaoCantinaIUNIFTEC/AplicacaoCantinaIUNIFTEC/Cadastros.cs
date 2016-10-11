@@ -6,8 +6,21 @@ using System.Threading.Tasks;
 
 namespace AplicacaoCantinaIUNIFTEC
 {
-    class Cadastros
+    class Cadastro
     {
-        
+        public List<Produto> ProdutosCadastrados = new List<Produto>();
+
+        public void CadastrarNovoProduto(string nome, string codigo, string preco, string dataFabricacao, string dataValidade)
+        {
+            float Preco=0f;
+            float.TryParse(preco, out Preco);
+            Produto produto = new Produto(nome,codigo,Preco,dataFabricacao,dataValidade);
+            AdicionarProdutoLista(produto);
+        }
+
+        private void AdicionarProdutoLista(Produto produto)
+        {
+            ProdutosCadastrados.Add(produto);
+        }
     }
 }
