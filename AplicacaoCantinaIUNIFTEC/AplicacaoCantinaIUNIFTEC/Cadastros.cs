@@ -85,13 +85,32 @@ namespace AplicacaoCantinaIUNIFTEC
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(local);
-
+            string nome ="", codigo = "", preco = "", fabricacao = "", validade = "";
+            ProdutosCadastrados.Clear();
             foreach(XmlNode node in doc.DocumentElement.ChildNodes)
             {
-                foreach(XmlAttribute attr in node.ChildNodes)
+                foreach(XmlAttribute attr in node.Attributes)
                 {
-
+                    switch (attr.Name)
+                    {
+                        case "NOME":
+                            nome = attr.Value;
+                            break;
+                        case "CODIGO":
+                            codigo = attr.Value;
+                            break;
+                        case "PRECO":
+                            preco = attr.Value;
+                            break;
+                        case "FABRICACAO":
+                            fabricacao = attr.Value;
+                            break;
+                        case "VALIDADE":
+                            validade = attr.Value;
+                            break;
+                    }
                 }
+                CadastrarNovoProduto(nome, codigo, preco, fabricacao, validade);
             }
         }
     }

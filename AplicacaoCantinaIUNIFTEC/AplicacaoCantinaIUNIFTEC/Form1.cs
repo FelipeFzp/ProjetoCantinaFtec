@@ -43,7 +43,11 @@ namespace AplicacaoCantinaIUNIFTEC
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cadastro cadastro = new Cadastro();
-            cadastro.AbrirArquivoXML();
+            AbrirArquivo_openFileDialog.Filter = "Arquivos XML | *.xml";
+            AbrirArquivo_openFileDialog.Title = "Selecione um local para abrir seu arquivo";
+            DialogResult resultadoJanela = AbrirArquivo_openFileDialog.ShowDialog();
+            var local = AbrirArquivo_openFileDialog.FileName;
+            cadastro.AbrirArquivoXML(local);
         }
 
         private void salvarArquivoToolStripMenuItem_Click(object sender, EventArgs e)
