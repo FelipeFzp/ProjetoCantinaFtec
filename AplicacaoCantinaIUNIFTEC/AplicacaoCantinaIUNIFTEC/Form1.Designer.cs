@@ -32,7 +32,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.novoProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.abrirArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +56,6 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoProdutoToolStripMenuItem,
             this.verProdutosToolStripMenuItem,
-            this.deletarToolStripMenuItem,
             this.toolStripSeparator1,
             this.abrirArquivoToolStripMenuItem,
             this.salvarArquivoToolStripMenuItem});
@@ -78,13 +76,6 @@
             this.verProdutosToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.verProdutosToolStripMenuItem.Text = "Ver Produtos Cadastrados";
             this.verProdutosToolStripMenuItem.Click += new System.EventHandler(this.verProdutosToolStripMenuItem_Click);
-            // 
-            // deletarToolStripMenuItem
-            // 
-            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
-            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.deletarToolStripMenuItem.Text = "Deletar Produto";
-            this.deletarToolStripMenuItem.Click += new System.EventHandler(this.deletarToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -135,7 +126,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem novoProdutoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProdutosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abrirArquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salvarArquivoToolStripMenuItem;

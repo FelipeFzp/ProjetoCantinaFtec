@@ -36,12 +36,13 @@
             this.ColunaPreco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColunaFabricacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColunaValidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DeletarItens_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(6, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 3;
@@ -49,7 +50,7 @@
             // 
             // CampoBusca_textBox
             // 
-            this.CampoBusca_textBox.Location = new System.Drawing.Point(79, 6);
+            this.CampoBusca_textBox.Location = new System.Drawing.Point(73, 6);
             this.CampoBusca_textBox.Name = "CampoBusca_textBox";
             this.CampoBusca_textBox.Size = new System.Drawing.Size(100, 20);
             this.CampoBusca_textBox.TabIndex = 10;
@@ -58,19 +59,20 @@
             // Produtos_listView
             // 
             this.Produtos_listView.Alignment = System.Windows.Forms.ListViewAlignment.Left;
-            this.Produtos_listView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.Produtos_listView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Produtos_listView.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Produtos_listView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Produtos_listView.CheckBoxes = true;
             this.Produtos_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColunaNome,
             this.ColunaCodigo,
             this.ColunaPreco,
             this.ColunaFabricacao,
             this.ColunaValidade});
+            this.Produtos_listView.FullRowSelect = true;
             this.Produtos_listView.GridLines = true;
             this.Produtos_listView.Location = new System.Drawing.Point(0, 32);
-            this.Produtos_listView.MultiSelect = false;
             this.Produtos_listView.Name = "Produtos_listView";
             this.Produtos_listView.Size = new System.Drawing.Size(498, 332);
             this.Produtos_listView.TabIndex = 11;
@@ -103,6 +105,16 @@
             this.ColunaValidade.Text = "Data de Validade";
             this.ColunaValidade.Width = 103;
             // 
+            // DeletarItens_button
+            // 
+            this.DeletarItens_button.Location = new System.Drawing.Point(434, 6);
+            this.DeletarItens_button.Name = "DeletarItens_button";
+            this.DeletarItens_button.Size = new System.Drawing.Size(51, 20);
+            this.DeletarItens_button.TabIndex = 12;
+            this.DeletarItens_button.Text = "Deletar";
+            this.DeletarItens_button.UseVisualStyleBackColor = true;
+            this.DeletarItens_button.Click += new System.EventHandler(this.DeletarItens_button_Click);
+            // 
             // Opcoes_VizualizadorProdutos_form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +122,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(497, 362);
+            this.Controls.Add(this.DeletarItens_button);
             this.Controls.Add(this.Produtos_listView);
             this.Controls.Add(this.CampoBusca_textBox);
             this.Controls.Add(this.label2);
@@ -133,5 +146,6 @@
         public System.Windows.Forms.ColumnHeader ColunaPreco;
         public System.Windows.Forms.ColumnHeader ColunaFabricacao;
         public System.Windows.Forms.ColumnHeader ColunaValidade;
+        private System.Windows.Forms.Button DeletarItens_button;
     }
 }

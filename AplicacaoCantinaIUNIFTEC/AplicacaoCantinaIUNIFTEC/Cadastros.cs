@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace AplicacaoCantinaIUNIFTEC
@@ -10,7 +11,8 @@ namespace AplicacaoCantinaIUNIFTEC
     class Cadastro
     {
         public static List<string> ProdutosCadastrados = new List<string>(); //Listas formatadas em CSV (informações sao divididas com ; )
-        #region Cadastro de Produtos
+        private static List<Produto> ProdutosCadastrados_Objetos = new List<Produto>();
+        #region Cadastro e Manipulação de Produtos
         public void CadastrarNovoProduto(string nome, string codigo, string preco, string dataFabricacao, string dataValidade)
         {
             float Preco=0f;
@@ -22,7 +24,22 @@ namespace AplicacaoCantinaIUNIFTEC
         private void AdicionarProdutoLista(Produto produto)
         {
             ProdutosCadastrados.Add(produto.ToCSV());
+            ProdutosCadastrados_Objetos.Add(produto);
         }
+
+        //public void DeletarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
+        // {
+        //     foreach(var item in ItensSelecionados)
+        //     {
+        //         var ItensParaRemover = ProdutosCadastrados_Objetos.Where(produto => produto.Nome.Contains(item.ToString()));
+        //                                                          // .Select(produto => produto.ToCSV());
+        //     }
+
+        //     foreach(var item in ItensSelecionados)
+        //     {
+        //         ProdutosCadastrados.Remove(item.ToString());
+        //     }
+        // }
         #endregion
 
         #region Validação dos Campos
@@ -130,8 +147,8 @@ namespace AplicacaoCantinaIUNIFTEC
             }
             return ListaFiltrada;
         }
-
-
         #endregion
+
+
     }
 }

@@ -39,5 +39,17 @@ namespace AplicacaoCantinaIUNIFTEC
                 Produtos_listView.Items.Add(item);
             }
         }
+
+        private void Itens()
+        {
+            Produtos_listView.MultiSelect = false;
+        }
+
+        private void DeletarItens_button_Click(object sender, EventArgs e)
+        {
+            //Cadastro cadastro = new Cadastro();
+            //var ItensSelecionados = Produtos_listView.CheckedItems;
+            //cadastro.DeletarItens(ItensSelecionados);
+        }
     }
 }
