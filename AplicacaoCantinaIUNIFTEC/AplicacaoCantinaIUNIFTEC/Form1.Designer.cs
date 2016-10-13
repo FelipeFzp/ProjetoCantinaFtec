@@ -34,7 +34,7 @@
             this.verProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalvarArquivo_saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.AbrirArquivo_openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -43,6 +43,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Window;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -58,7 +59,7 @@
             this.verProdutosToolStripMenuItem,
             this.deletarToolStripMenuItem,
             this.toolStripSeparator1,
-            this.abrirToolStripMenuItem,
+            this.abrirArquivoToolStripMenuItem,
             this.salvarArquivoToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(59, 20);
@@ -90,12 +91,12 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(206, 6);
             // 
-            // abrirToolStripMenuItem
+            // abrirArquivoToolStripMenuItem
             // 
-            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.abrirToolStripMenuItem.Text = "Abrir Arquivo...";
-            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
+            this.abrirArquivoToolStripMenuItem.Name = "abrirArquivoToolStripMenuItem";
+            this.abrirArquivoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.abrirArquivoToolStripMenuItem.Text = "Abrir Arquivo...";
+            this.abrirArquivoToolStripMenuItem.Click += new System.EventHandler(this.abrirArquivoToolStripMenuItem_Click);
             // 
             // salvarArquivoToolStripMenuItem
             // 
@@ -113,12 +114,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.Text = "Administração de Vendas";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -133,7 +136,7 @@
         private System.Windows.Forms.ToolStripMenuItem novoProdutoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProdutosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirArquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salvarArquivoToolStripMenuItem;
         public System.Windows.Forms.SaveFileDialog SalvarArquivo_saveFileDialog;

@@ -9,8 +9,8 @@ namespace AplicacaoCantinaIUNIFTEC
 {
     class Cadastro
     {
-        public static List<string> ProdutosCadastrados = new List<string>(); //formatada em CSV (informações sao divididas com ; )
-
+        public static List<string> ProdutosCadastrados = new List<string>(); //Listas formatadas em CSV (informações sao divididas com ; )
+        #region Cadastro de Produtos
         public void CadastrarNovoProduto(string nome, string codigo, string preco, string dataFabricacao, string dataValidade)
         {
             float Preco=0f;
@@ -23,7 +23,9 @@ namespace AplicacaoCantinaIUNIFTEC
         {
             ProdutosCadastrados.Add(produto.ToCSV());
         }
+        #endregion
 
+        #region Validação dos Campos
         public static bool ValidarCamposCadastroProdutos(string campoCodigo, string campoDataFabricacao, string campoNome, string campoPreco, string campoDataValidade)
         {
             float Preco = 0f;
@@ -44,7 +46,9 @@ namespace AplicacaoCantinaIUNIFTEC
                 return false;
             }
         }
+        #endregion
 
+        #region Manipulação Arquivos
         public static void SalvarArquivoXML(string local)
         {
             XmlDocument doc = new XmlDocument();
@@ -113,5 +117,21 @@ namespace AplicacaoCantinaIUNIFTEC
                 CadastrarNovoProduto(nome, codigo, preco, fabricacao, validade);
             }
         }
+        #endregion
+
+        #region Filtro Lista de Produtos Cadastrados
+        public static List<string> FiltrarListaProdutosCadastrados(string parametroFiltro)
+        {
+            List<string> ListaFiltrada = new List<string>();
+            var InformacoesFiltradas = ProdutosCadastrados.Where(produto => produto.Contains(parametroFiltro));
+            foreach(var informacao in InformacoesFiltradas)
+            {
+                ListaFiltrada.Add(informacao);
+            }
+            return ListaFiltrada;
+        }
+
+
+        #endregion
     }
 }

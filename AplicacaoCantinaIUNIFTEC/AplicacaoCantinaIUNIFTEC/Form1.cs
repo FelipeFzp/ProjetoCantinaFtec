@@ -18,11 +18,7 @@ namespace AplicacaoCantinaIUNIFTEC
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
         #region Menu Opções
-
         private void novoProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Opcoes_CadastrarProduto_Form2 form2 = new Opcoes_CadastrarProduto_Form2();
@@ -31,23 +27,13 @@ namespace AplicacaoCantinaIUNIFTEC
 
         private void verProdutosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VizualizadorProdutos_form3 form3 = new VizualizadorProdutos_form3();
-            form3.ShowDialog();
+            Opcoes_VizualizadorProdutos_form3 form3 = new Opcoes_VizualizadorProdutos_form3();
+            form3.Show();
         }
 
         private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Cadastro cadastro = new Cadastro();
-            AbrirArquivo_openFileDialog.Filter = "Arquivos XML | *.xml";
-            AbrirArquivo_openFileDialog.Title = "Selecione um local para abrir seu arquivo";
-            DialogResult resultadoJanela = AbrirArquivo_openFileDialog.ShowDialog();
-            var local = AbrirArquivo_openFileDialog.FileName;
-            cadastro.AbrirArquivoXML(local);
         }
 
         private void salvarArquivoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,6 +50,16 @@ namespace AplicacaoCantinaIUNIFTEC
             }
         }
 
+
+        private void abrirArquivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cadastro cadastro = new Cadastro();
+            AbrirArquivo_openFileDialog.Filter = "Arquivos XML | *.xml";
+            AbrirArquivo_openFileDialog.Title = "Selecione um local para abrir seu arquivo";
+            DialogResult resultadoJanela = AbrirArquivo_openFileDialog.ShowDialog();
+            var local = AbrirArquivo_openFileDialog.FileName;
+            cadastro.AbrirArquivoXML(local);
+        }
         #endregion
 
     }
