@@ -22,7 +22,12 @@ namespace AplicacaoCantinaIUNIFTEC
             this.DataFabricacao = dataFabricacao;
             this.DataValidade = dataValidade;
         }
-        
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
         public string ToCSV()
         {
             return $"{Nome};{Codigo};{Preco};{DataFabricacao};{DataValidade}";

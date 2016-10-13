@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace AplicacaoCantinaIUNIFTEC
     {
         public static List<string> ProdutosCadastrados = new List<string>(); //Listas formatadas em CSV (informações sao divididas com ; )
         private static List<Produto> ProdutosCadastrados_Objetos = new List<Produto>();
+
         #region Cadastro e Manipulação de Produtos
         public void CadastrarNovoProduto(string nome, string codigo, string preco, string dataFabricacao, string dataValidade)
         {
@@ -27,19 +29,27 @@ namespace AplicacaoCantinaIUNIFTEC
             ProdutosCadastrados_Objetos.Add(produto);
         }
 
-        //public void DeletarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
-        // {
-        //     foreach(var item in ItensSelecionados)
-        //     {
-        //         var ItensParaRemover = ProdutosCadastrados_Objetos.Where(produto => produto.Nome.Contains(item.ToString()));
-        //                                                          // .Select(produto => produto.ToCSV());
-        //     }
-
-        //     foreach(var item in ItensSelecionados)
-        //     {
-        //         ProdutosCadastrados.Remove(item.ToString());
-        //     }
-        // }
+        public void DeletarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
+        {
+            
+            foreach (var item in ItensSelecionados)
+            {
+                char[] formatacao = item.ToString().ToCharArray();
+                List<char> texto = new List<char>();
+                for (int i=15; i != formatacao.Length-1;  i++)
+                {
+                    texto.Add(formatacao.ElementAt(i));
+                }
+                string ItemFormatado = new string(texto.ToArray());
+                IEnumerable ProdutoParaRemover = ProdutosCadastrados_Objetos.Where(produto => produto.Nome.Equals(ItemFormatado));
+                foreach (Produto produto in ProdutoParaRemover)
+                {
+                    ProdutosCadastrados.Remove(produto.ToCSV());
+                    ProdutosCadastrados_Objetos.Remove(produto);
+                }
+            }
+            
+        }
         #endregion
 
         #region Validação dos Campos

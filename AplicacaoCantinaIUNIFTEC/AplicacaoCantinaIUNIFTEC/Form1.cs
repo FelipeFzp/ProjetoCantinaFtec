@@ -31,11 +31,6 @@ namespace AplicacaoCantinaIUNIFTEC
             form3.Show();
         }
 
-        private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void salvarArquivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SalvarArquivo_saveFileDialog.DefaultExt = ".xml";

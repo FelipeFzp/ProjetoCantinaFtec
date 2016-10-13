@@ -37,6 +37,7 @@
             this.ColunaFabricacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColunaValidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DeletarItens_button = new System.Windows.Forms.Button();
+            this.EditarItens_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -115,6 +116,16 @@
             this.DeletarItens_button.UseVisualStyleBackColor = true;
             this.DeletarItens_button.Click += new System.EventHandler(this.DeletarItens_button_Click);
             // 
+            // EditarItens_button
+            // 
+            this.EditarItens_button.Location = new System.Drawing.Point(375, 6);
+            this.EditarItens_button.Name = "EditarItens_button";
+            this.EditarItens_button.Size = new System.Drawing.Size(53, 20);
+            this.EditarItens_button.TabIndex = 13;
+            this.EditarItens_button.Text = "Editar";
+            this.EditarItens_button.UseVisualStyleBackColor = true;
+            this.EditarItens_button.Click += new System.EventHandler(this.EditarItens_button_Click);
+            // 
             // Opcoes_VizualizadorProdutos_form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,6 +133,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(497, 362);
+            this.Controls.Add(this.EditarItens_button);
             this.Controls.Add(this.DeletarItens_button);
             this.Controls.Add(this.Produtos_listView);
             this.Controls.Add(this.CampoBusca_textBox);
@@ -147,5 +159,6 @@
         public System.Windows.Forms.ColumnHeader ColunaFabricacao;
         public System.Windows.Forms.ColumnHeader ColunaValidade;
         private System.Windows.Forms.Button DeletarItens_button;
+        private System.Windows.Forms.Button EditarItens_button;
     }
 }

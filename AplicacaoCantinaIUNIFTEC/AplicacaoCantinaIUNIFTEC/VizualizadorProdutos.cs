@@ -40,16 +40,21 @@ namespace AplicacaoCantinaIUNIFTEC
             }
         }
 
-        private void Itens()
-        {
-            Produtos_listView.MultiSelect = false;
-        }
-
         private void DeletarItens_button_Click(object sender, EventArgs e)
         {
-            //Cadastro cadastro = new Cadastro();
-            //var ItensSelecionados = Produtos_listView.CheckedItems;
-            //cadastro.DeletarItens(ItensSelecionados);
+            DialogResult resultadoJanela = MessageBox.Show("Tem certeza que deseja deletar os itens selecionados ?","S/N",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(resultadoJanela.Equals(DialogResult.Yes))
+            {
+                Cadastro cadastro = new Cadastro();
+                var ItensSelecionados = Produtos_listView.CheckedItems;
+                cadastro.DeletarItens(ItensSelecionados);
+                AtualizarListView(Cadastro.ProdutosCadastrados);
+            }  
+        }
+
+        private void EditarItens_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
