@@ -54,7 +54,13 @@ namespace AplicacaoCantinaIUNIFTEC
 
         private void EditarItens_button_Click(object sender, EventArgs e)
         {
+            List<string> ListaItensSelecionados = new List<string>(); 
+            var ItensSelecionados = Produtos_listView.CheckedItems;
+            foreach (var itens in ItensSelecionados)
+                ListaItensSelecionados.Add(itens.ToString());
 
+            EditorProdutos editor = new EditorProdutos();
+            editor.ShowDialog();
         }
     }
 }

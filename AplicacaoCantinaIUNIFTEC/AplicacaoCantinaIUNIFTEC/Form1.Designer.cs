@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.SalvarArquivo_saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.AbrirArquivo_openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.novoProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,14 +37,17 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.abrirArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvarArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SalvarArquivo_saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.AbrirArquivo_openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // SalvarArquivo_saveFileDialog
+            // 
+            this.SalvarArquivo_saveFileDialog.DefaultExt = "xml";
+            this.SalvarArquivo_saveFileDialog.FileName = "Produtos_DB";
+            // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Window;
+            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -96,11 +101,6 @@
             this.salvarArquivoToolStripMenuItem.Text = "Salvar Arquivo...";
             this.salvarArquivoToolStripMenuItem.Click += new System.EventHandler(this.salvarArquivoToolStripMenuItem_Click);
             // 
-            // SalvarArquivo_saveFileDialog
-            // 
-            this.SalvarArquivo_saveFileDialog.DefaultExt = "xml";
-            this.SalvarArquivo_saveFileDialog.FileName = "Produtos_DB";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,7 +108,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.ShowIcon = false;

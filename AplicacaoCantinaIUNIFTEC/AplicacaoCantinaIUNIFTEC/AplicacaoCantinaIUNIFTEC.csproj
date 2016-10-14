@@ -46,13 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadastrarProdutoForm.cs">
+    <Compile Include="CadastrarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastrarProdutoForm.Designer.cs">
-      <DependentUpon>CadastrarProdutoForm.cs</DependentUpon>
+    <Compile Include="CadastrarProduto.Designer.cs">
+      <DependentUpon>CadastrarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Cadastros.cs" />
+    <Compile Include="EditorProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorProdutos.Designer.cs">
+      <DependentUpon>EditorProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,8 +74,11 @@
     <Compile Include="VizualizadorProdutos.Designer.cs">
       <DependentUpon>VizualizadorProdutos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CadastrarProdutoForm.resx">
-      <DependentUpon>CadastrarProdutoForm.cs</DependentUpon>
+    <EmbeddedResource Include="CadastrarProduto.resx">
+      <DependentUpon>CadastrarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorProdutos.resx">
+      <DependentUpon>EditorProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -82,6 +91,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VizualizadorProdutos.resx">
       <DependentUpon>VizualizadorProdutos.cs</DependentUpon>
@@ -98,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sem título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sem título1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

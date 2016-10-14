@@ -17,9 +17,9 @@ namespace AplicacaoCantinaIUNIFTEC
         #region Cadastro e Manipulação de Produtos
         public void CadastrarNovoProduto(string nome, string codigo, string preco, string dataFabricacao, string dataValidade)
         {
-            float Preco=0f;
+            float Preco = 0f;
             float.TryParse(preco, out Preco);
-            Produto produto = new Produto(nome,codigo,Preco,dataFabricacao,dataValidade);
+            Produto produto = new Produto(nome, codigo, Preco, dataFabricacao, dataValidade);
             AdicionarProdutoLista(produto);
         }
 
@@ -31,24 +31,24 @@ namespace AplicacaoCantinaIUNIFTEC
 
         public void DeletarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
         {
-            
+
             foreach (var item in ItensSelecionados)
             {
                 char[] formatacao = item.ToString().ToCharArray();
                 List<char> texto = new List<char>();
-                for (int i=15; i != formatacao.Length-1;  i++)
+                for (int i = 15; i != formatacao.Length - 1; i++)
                 {
                     texto.Add(formatacao.ElementAt(i));
                 }
                 string ItemFormatado = new string(texto.ToArray());
-                IEnumerable ProdutoParaRemover = ProdutosCadastrados_Objetos.Where(produto => produto.Nome.Equals(ItemFormatado));
-                foreach (Produto produto in ProdutoParaRemover)
+                var ProdutoParaRemover = ProdutosCadastrados_Objetos.Where(produto => produto.Nome.Equals(ItemFormatado));
+                for (int i = 0; i < ProdutoParaRemover.Count(); i++)
                 {
-                    ProdutosCadastrados.Remove(produto.ToCSV());
-                    ProdutosCadastrados_Objetos.Remove(produto);
+                    ProdutosCadastrados.Remove(ProdutoParaRemover.ElementAt(i).ToCSV());
+                    ProdutosCadastrados_Objetos.Remove(ProdutoParaRemover.ElementAt(i));
                 }
             }
-            
+
         }
         #endregion
 
@@ -116,11 +116,11 @@ namespace AplicacaoCantinaIUNIFTEC
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(local);
-            string nome ="", codigo = "", preco = "", fabricacao = "", validade = "";
+            string nome = "", codigo = "", preco = "", fabricacao = "", validade = "";
             ProdutosCadastrados.Clear();
-            foreach(XmlNode node in doc.DocumentElement.ChildNodes)
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
             {
-                foreach(XmlAttribute attr in node.Attributes)
+                foreach (XmlAttribute attr in node.Attributes)
                 {
                     switch (attr.Name)
                     {
@@ -151,7 +151,7 @@ namespace AplicacaoCantinaIUNIFTEC
         {
             List<string> ListaFiltrada = new List<string>();
             var InformacoesFiltradas = ProdutosCadastrados.Where(produto => produto.Contains(parametroFiltro));
-            foreach(var informacao in InformacoesFiltradas)
+            foreach (var informacao in InformacoesFiltradas)
             {
                 ListaFiltrada.Add(informacao);
             }
