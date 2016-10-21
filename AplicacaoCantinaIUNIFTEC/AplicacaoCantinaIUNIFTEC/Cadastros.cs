@@ -12,7 +12,7 @@ namespace AplicacaoCantinaIUNIFTEC
     class Cadastro
     {
         public static List<string> ProdutosCadastrados = new List<string>(); //Listas formatadas em CSV (informações sao divididas com ; )
-        private static List<Produto> ProdutosCadastrados_Objetoxxxxxxas = new List<Produto>();
+        private static List<Produto> ProdutosCadastrados_Objetos = new List<Produto>();
 
         #region Cadastro e Manipulação de Produtos
         public void CadastrarNovoProduto(string nome, string codigo, string preco, string dataFabricacao, string dataValidade)
