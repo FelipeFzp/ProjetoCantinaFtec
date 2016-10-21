@@ -59,6 +59,11 @@ namespace AplicacaoCantinaIUNIFTEC
             foreach (var itens in ItensSelecionados)
                 ListaItensSelecionados.Add(itens.ToString());
 
+
+            /*Cadastro cadastro = new Cadastro();
+            cadastro.*/
+
+
             EditorProdutos editor = new EditorProdutos();
             editor.ShowDialog();
         }

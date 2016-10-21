@@ -19,7 +19,9 @@ namespace AplicacaoCantinaIUNIFTEC
 
         private void EditorProdutos_Load(object sender, EventArgs e)
         {
-            
+            /*Cadastro cadastro = new Cadastro();
+            var ItensSelecionados = ProdutosSelecionados_listBox
+            cadastro.EditarItens();*/
         }
     }
 }

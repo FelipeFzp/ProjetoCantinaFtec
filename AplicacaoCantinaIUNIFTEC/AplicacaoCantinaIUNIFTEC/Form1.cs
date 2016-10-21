@@ -53,7 +53,10 @@ namespace AplicacaoCantinaIUNIFTEC
             AbrirArquivo_openFileDialog.Title = "Selecione um local para abrir seu arquivo";
             DialogResult resultadoJanela = AbrirArquivo_openFileDialog.ShowDialog();
             var local = AbrirArquivo_openFileDialog.FileName;
-            cadastro.AbrirArquivoXML(local);
+            if (resultadoJanela.Equals(DialogResult.OK))
+            {
+                cadastro.AbrirArquivoXML(local);
+            }
         }
         #endregion
 

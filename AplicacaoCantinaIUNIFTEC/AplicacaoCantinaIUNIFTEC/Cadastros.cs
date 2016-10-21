@@ -31,25 +31,42 @@ namespace AplicacaoCantinaIUNIFTEC
 
         public void DeletarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
         {
-
-            foreach (var item in ItensSelecionados)
-            {
-                char[] formatacao = item.ToString().ToCharArray();
-                List<char> texto = new List<char>();
-                for (int i = 15; i != formatacao.Length - 1; i++)
-                {
-                    texto.Add(formatacao.ElementAt(i));
-                }
-                string ItemFormatado = new string(texto.ToArray());
-                var ProdutoParaRemover = ProdutosCadastrados_Objetos.Where(produto => produto.Nome.Equals(ItemFormatado));
+            List<string> ItensFormatados = FormatarItens(ItensSelecionados);
+            if (ItensFormatados!=null)
+            foreach (var item in ItensFormatados)
+            {    
+                var ProdutoParaRemover = ProdutosCadastrados_Objetos.Where(produto => produto.Nome.Equals(item));
                 for (int i = 0; i < ProdutoParaRemover.Count(); i++)
                 {
                     ProdutosCadastrados.Remove(ProdutoParaRemover.ElementAt(i).ToCSV());
                     ProdutosCadastrados_Objetos.Remove(ProdutoParaRemover.ElementAt(i));
                 }
             }
+        }
+
+        public void EditarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
+        {
+            FormatarItens(ItensSelecionados);
+            
 
         }
+
+        private List<string> FormatarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
+        {
+            List<string> ItensFormatados = new List<string>();
+            List<char> texto = new List<char>();
+            foreach (var item in ItensSelecionados)
+            {
+                char[] formatacao = item.ToString().ToCharArray();
+                for (int i = 15; i != formatacao.Length - 1; i++)
+                {
+                    texto.Add(formatacao.ElementAt(i));
+                }
+                ItensFormatados.Add(new string(texto.ToArray()));
+            }
+            return ItensFormatados;
+        }
+        //fazer metodo formatar itens de listviewitemcollection para lista string e usar no deletar e editar em vez de repetir o codigo em cada metodo
         #endregion
 
         #region Validação dos Campos
