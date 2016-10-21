@@ -13,12 +13,13 @@ namespace AplicacaoCantinaIUNIFTEC
     {
         public static List<string> ProdutosCadastrados = new List<string>(); //Listas formatadas em CSV (informações sao divididas com ; )
         private static List<Produto> ProdutosCadastrados_Objetos = new List<Produto>();
+        List<Produto> ProdutosEditados = new List<Produto>();
 
         #region Cadastro e Manipulação de Produtos
         public void CadastrarNovoProduto(string nome, string codigo, string preco, string dataFabricacao, string dataValidade)
         {
-            float Preco = 0f;
-            float.TryParse(preco, out Preco);
+            double Preco = 0f;
+            double.TryParse(preco, out Preco);
             Produto produto = new Produto(nome, codigo, Preco, dataFabricacao, dataValidade);
             AdicionarProdutoLista(produto);
         }
@@ -31,7 +32,7 @@ namespace AplicacaoCantinaIUNIFTEC
 
         public void DeletarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
         {
-            List<string> ItensFormatados = FormatarItens(ItensSelecionados);
+            List<string> ItensFormatados = FormatarItensDeListView(ItensSelecionados);
             if (ItensFormatados!=null)
             foreach (var item in ItensFormatados)
             {    
@@ -44,14 +45,35 @@ namespace AplicacaoCantinaIUNIFTEC
             }
         }
 
-        public void EditarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
+        public Produto BuscarProdutoEditor(object objeto)
         {
-            FormatarItens(ItensSelecionados);
+            Produto produto = ProdutosCadastrados_Objetos.Find(p => p.Nome.Equals(objeto));
+            return produto;    
+        }
+
+        public void InserirProdutoEditado(Produto produto, int indexObj)
+        {
             
+            ProdutosCadastrados_Objetos.RemoveAt(indexObj);
+            ProdutosCadastrados_Objetos.Insert(indexObj, produto);
+
+            ProdutosCadastrados.RemoveAt(indexObj);
+            ProdutosCadastrados.Insert(indexObj, produto.ToCSV());
 
         }
 
-        private List<string> FormatarItens(ListView.CheckedListViewItemCollection ItensSelecionados)
+        public Produto AlterarProduto(string nome, string codigo, string preco,int indexObj)
+        {
+            double Preco = 0f;
+            double.TryParse(preco, out Preco);
+            string DataFabricacao = ProdutosCadastrados_Objetos.ElementAt(indexObj).DataFabricacao;
+            string DataValidade = ProdutosCadastrados_Objetos.ElementAt(indexObj).DataValidade;
+            
+            Produto produto = new Produto(nome, codigo, Preco, DataFabricacao, DataValidade);
+            return produto;
+        }
+
+        public List<string> FormatarItensDeListView(ListView.CheckedListViewItemCollection ItensSelecionados)
         {
             List<string> ItensFormatados = new List<string>();
             List<char> texto = new List<char>();
@@ -63,25 +85,25 @@ namespace AplicacaoCantinaIUNIFTEC
                     texto.Add(formatacao.ElementAt(i));
                 }
                 ItensFormatados.Add(new string(texto.ToArray()));
+                texto.Clear();
             }
             return ItensFormatados;
         }
-        //fazer metodo formatar itens de listviewitemcollection para lista string e usar no deletar e editar em vez de repetir o codigo em cada metodo
         #endregion
 
         #region Validação dos Campos
         public static bool ValidarCamposCadastroProdutos(string campoCodigo, string campoDataFabricacao, string campoNome, string campoPreco, string campoDataValidade)
         {
-            float Preco = 0f;
+            double Preco = 0f;
             DateTime Fabricacao, Validade;
-            // var Fabricacao = DateTime.Parse(campoDataFabricacao, CultureInfo.InvariantCulture).Date;
-            // var Validade = DateTime.Parse(campoDataValidade, CultureInfo.CurrentCulture).Date;
             DateTime.TryParse(campoDataFabricacao, out Fabricacao);
             DateTime.TryParse(campoDataValidade, out Validade);
+            bool ProdutoExiste = ProdutosCadastrados_Objetos.Exists(p => p.Codigo.Equals(campoCodigo));
 
             if (campoCodigo != string.Empty && Fabricacao.Year <= Validade.Year &&
                 Fabricacao.ToString() != "01/01/0001 00:00:00" && Validade.ToString() != "01/01/0001 00:00:00" &&
-                campoNome != string.Empty && float.TryParse(campoPreco, out Preco))
+                campoNome != string.Empty && double.TryParse(campoPreco, out Preco)
+                && ProdutoExiste==false)
             {
                 return true;
             }
@@ -90,6 +112,25 @@ namespace AplicacaoCantinaIUNIFTEC
                 return false;
             }
         }
+
+        public static bool ValidarCamposEditor(string campoCodigo, string campoNome, string campoPreco)
+        {
+            double Preco = 0f;
+            bool ProdutoExiste = ProdutosCadastrados_Objetos.Exists(p => p.Codigo.Equals(campoCodigo));
+            if (campoCodigo != string.Empty &&
+                campoNome != string.Empty &&  
+                double.TryParse(campoPreco, out Preco) && 
+                (ProdutoExiste == false || ProdutosCadastrados_Objetos.Exists(p => p.Codigo.Equals(campoCodigo) && p.Nome.Equals(campoNome))))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        
         #endregion
 
         #region Manipulação Arquivos

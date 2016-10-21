@@ -10,11 +10,11 @@ namespace AplicacaoCantinaIUNIFTEC
     {
         public string Nome { get; set; }
         public string Codigo { get; set; }
-        public float  Preco { get; private set; }
+        public double  Preco { get; private set; }
         public string DataValidade { get; private set; }
         public string DataFabricacao { get; private set; }
 
-        public Produto(string nome, string codigo , float preco, string dataFabricacao, string dataValidade)
+        public Produto(string nome, string codigo , double preco, string dataFabricacao, string dataValidade)
         {
             this.Nome = nome;
             this.Codigo = codigo;
@@ -30,7 +30,8 @@ namespace AplicacaoCantinaIUNIFTEC
 
         public string ToCSV()
         {
-            return $"{Nome};{Codigo};{Preco};{DataFabricacao};{DataValidade}";
+            
+            return $"{Nome};{Codigo};{String.Format("{0:0.00}", Preco)};{DataFabricacao};{DataValidade}";
         }
     }
 }

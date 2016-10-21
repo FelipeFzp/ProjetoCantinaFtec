@@ -39,7 +39,7 @@
             this.CampoPreco_textBox = new System.Windows.Forms.TextBox();
             this.CampoDataFabricacao_maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CampoNome_textBox = new System.Windows.Forms.TextBox();
-            this.Validar_button = new System.Windows.Forms.Button();
+            this.Informacao_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -106,6 +106,7 @@
             this.CampoDataValidade_maskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.CampoDataValidade_maskedTextBox.TabIndex = 4;
             this.CampoDataValidade_maskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.CampoDataValidade_maskedTextBox.TextChanged += new System.EventHandler(this.CampoDataValidade_maskedTextBox_TextChanged);
             // 
             // CampoCodigo_maskedTextBox
             // 
@@ -114,6 +115,7 @@
             this.CampoCodigo_maskedTextBox.Name = "CampoCodigo_maskedTextBox";
             this.CampoCodigo_maskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.CampoCodigo_maskedTextBox.TabIndex = 1;
+            this.CampoCodigo_maskedTextBox.TextChanged += new System.EventHandler(this.CampoCodigo_maskedTextBox_TextChanged);
             // 
             // CampoPreco_textBox
             // 
@@ -121,6 +123,7 @@
             this.CampoPreco_textBox.Name = "CampoPreco_textBox";
             this.CampoPreco_textBox.Size = new System.Drawing.Size(100, 20);
             this.CampoPreco_textBox.TabIndex = 2;
+            this.CampoPreco_textBox.TextChanged += new System.EventHandler(this.CampoPreco_textBox_TextChanged);
             // 
             // CampoDataFabricacao_maskedTextBox
             // 
@@ -130,6 +133,7 @@
             this.CampoDataFabricacao_maskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.CampoDataFabricacao_maskedTextBox.TabIndex = 3;
             this.CampoDataFabricacao_maskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.CampoDataFabricacao_maskedTextBox.TextChanged += new System.EventHandler(this.CampoDataFabricacao_maskedTextBox_TextChanged);
             // 
             // CampoNome_textBox
             // 
@@ -137,23 +141,23 @@
             this.CampoNome_textBox.Name = "CampoNome_textBox";
             this.CampoNome_textBox.Size = new System.Drawing.Size(100, 20);
             this.CampoNome_textBox.TabIndex = 0;
+            this.CampoNome_textBox.TextChanged += new System.EventHandler(this.CampoNome_textBox_TextChanged);
             // 
-            // Validar_button
+            // Informacao_label
             // 
-            this.Validar_button.Location = new System.Drawing.Point(28, 194);
-            this.Validar_button.Name = "Validar_button";
-            this.Validar_button.Size = new System.Drawing.Size(64, 23);
-            this.Validar_button.TabIndex = 11;
-            this.Validar_button.Text = "Validar";
-            this.Validar_button.UseVisualStyleBackColor = true;
-            this.Validar_button.Click += new System.EventHandler(this.Validar_button_Click);
+            this.Informacao_label.AutoSize = true;
+            this.Informacao_label.Location = new System.Drawing.Point(3, 199);
+            this.Informacao_label.Name = "Informacao_label";
+            this.Informacao_label.Size = new System.Drawing.Size(88, 13);
+            this.Informacao_label.TabIndex = 11;
+            this.Informacao_label.Text = "Informacao_label";
             // 
             // Opcoes_CadastrarProduto_Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 229);
-            this.Controls.Add(this.Validar_button);
+            this.ClientSize = new System.Drawing.Size(256, 230);
+            this.Controls.Add(this.Informacao_label);
             this.Controls.Add(this.CampoDataFabricacao_maskedTextBox);
             this.Controls.Add(this.CampoNome_textBox);
             this.Controls.Add(this.CampoPreco_textBox);
@@ -167,6 +171,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Opcoes_CadastrarProduto_Form2";
             this.Text = "Cadastrar Novo Produto";
+            this.Load += new System.EventHandler(this.Opcoes_CadastrarProduto_Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +189,6 @@
         private System.Windows.Forms.TextBox CampoPreco_textBox;
         private System.Windows.Forms.MaskedTextBox CampoDataFabricacao_maskedTextBox;
         private System.Windows.Forms.TextBox CampoNome_textBox;
-        private System.Windows.Forms.Button Validar_button;
+        private System.Windows.Forms.Label Informacao_label;
     }
 }

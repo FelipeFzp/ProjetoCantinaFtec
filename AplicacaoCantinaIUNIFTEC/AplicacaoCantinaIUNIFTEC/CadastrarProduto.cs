@@ -25,16 +25,79 @@ namespace AplicacaoCantinaIUNIFTEC
             Close();
         }
 
-        private void Validar_button_Click(object sender, EventArgs e)
+        private void CampoNome_textBox_TextChanged(object sender, EventArgs e)
         {
             if (Cadastro.ValidarCamposCadastroProdutos(CampoCodigo_maskedTextBox.Text, CampoDataFabricacao_maskedTextBox.Text, CampoNome_textBox.Text, CampoPreco_textBox.Text, CampoDataValidade_maskedTextBox.Text))
             {
                 CadastrarItem_button.Enabled = true;
+                Informacao_label.Text = " ";
             }
             else
             {
                 CadastrarItem_button.Enabled = false;
-                MessageBox.Show("Preenchimento dos campos estão Inválidos !", "Campos estão vazios/Preço Inválido/Datas Inválidas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Informacao_label.Text = "Campos Inválidos";
+            }
+        }
+
+        private void CampoPreco_textBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Cadastro.ValidarCamposCadastroProdutos(CampoCodigo_maskedTextBox.Text, CampoDataFabricacao_maskedTextBox.Text, CampoNome_textBox.Text, CampoPreco_textBox.Text, CampoDataValidade_maskedTextBox.Text))
+            {
+                CadastrarItem_button.Enabled = true;
+                Informacao_label.Text = " ";
+            }
+            else
+            {
+                CadastrarItem_button.Enabled = false;
+                Informacao_label.Text = "Campos Inválidos";
+            }
+        }
+
+        private void Opcoes_CadastrarProduto_Form2_Load(object sender, EventArgs e)
+        {
+            Informacao_label.ForeColor = Color.Red;
+            Informacao_label.Text = "Preencha os Campos.";
+        }
+
+        private void CampoDataFabricacao_maskedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Cadastro.ValidarCamposCadastroProdutos(CampoCodigo_maskedTextBox.Text, CampoDataFabricacao_maskedTextBox.Text, CampoNome_textBox.Text, CampoPreco_textBox.Text, CampoDataValidade_maskedTextBox.Text))
+            {
+                CadastrarItem_button.Enabled = true;
+                Informacao_label.Text = " ";
+            }
+            else
+            {
+                CadastrarItem_button.Enabled = false;
+                Informacao_label.Text = "Campos Inválidos";
+            }
+        }
+
+        private void CampoCodigo_maskedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Cadastro.ValidarCamposCadastroProdutos(CampoCodigo_maskedTextBox.Text, CampoDataFabricacao_maskedTextBox.Text, CampoNome_textBox.Text, CampoPreco_textBox.Text, CampoDataValidade_maskedTextBox.Text))
+            {
+                CadastrarItem_button.Enabled = true;
+                Informacao_label.Text = " ";
+            }
+            else
+            {
+                CadastrarItem_button.Enabled = false;
+                Informacao_label.Text = "Campos Inválidos";
+            }
+        }
+
+        private void CampoDataValidade_maskedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Cadastro.ValidarCamposCadastroProdutos(CampoCodigo_maskedTextBox.Text, CampoDataFabricacao_maskedTextBox.Text, CampoNome_textBox.Text, CampoPreco_textBox.Text, CampoDataValidade_maskedTextBox.Text))
+            {
+                CadastrarItem_button.Enabled = true;
+                Informacao_label.Text = " ";
+            }
+            else
+            {
+                CadastrarItem_button.Enabled = false;
+                Informacao_label.Text = "Campos Inválidos";
             }
         }
     }
