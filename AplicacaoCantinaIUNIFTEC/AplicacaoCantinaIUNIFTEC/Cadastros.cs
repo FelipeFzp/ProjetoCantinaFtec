@@ -53,13 +53,14 @@ namespace AplicacaoCantinaIUNIFTEC
 
         public void InserirProdutoEditado(Produto produto, int indexObj)
         {
-            
-            ProdutosCadastrados_Objetos.RemoveAt(indexObj);
-            ProdutosCadastrados_Objetos.Insert(indexObj, produto);
+            if(indexObj!=-1)
+            {
+                ProdutosCadastrados_Objetos.RemoveAt(indexObj);
+                ProdutosCadastrados_Objetos.Insert(indexObj, produto);
 
-            ProdutosCadastrados.RemoveAt(indexObj);
-            ProdutosCadastrados.Insert(indexObj, produto.ToCSV());
-
+                ProdutosCadastrados.RemoveAt(indexObj);
+                ProdutosCadastrados.Insert(indexObj, produto.ToCSV());
+            }
         }
 
         public Produto AlterarProduto(string nome, string codigo, string preco,int indexObj)
@@ -68,7 +69,6 @@ namespace AplicacaoCantinaIUNIFTEC
             double.TryParse(preco, out Preco);
             string DataFabricacao = ProdutosCadastrados_Objetos.ElementAt(indexObj).DataFabricacao;
             string DataValidade = ProdutosCadastrados_Objetos.ElementAt(indexObj).DataValidade;
-            
             Produto produto = new Produto(nome, codigo, Preco, DataFabricacao, DataValidade);
             return produto;
         }

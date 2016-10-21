@@ -57,14 +57,18 @@ namespace AplicacaoCantinaIUNIFTEC
 
         private void SalvarEdicao_button_Click(object sender, EventArgs e)
         {
+            Opcoes_VizualizadorProdutos_form3 viz = new Opcoes_VizualizadorProdutos_form3();
             Cadastro cadastro = new Cadastro();
             var ItemSelecionado = ProdutosSelecionados_listBox.SelectedItem;
-            int IndexItem = Cadastro.ProdutosCadastrados.FindIndex(p => p.Contains(ItemSelecionado.ToString()));
-            Produto produtoCompleto = cadastro.AlterarProduto(CampoNome_textBox.Text, CampoCodigo_maskedTextBox.Text, CampoPreco_textBox.Text, IndexItem);
-            cadastro.InserirProdutoEditado(produtoCompleto, IndexItem);
-            ProdutosSelecionados_listBox.Items.Remove(produtoCompleto.Nome);
+            if (ItemSelecionado != null)
+            {
+                int IndexItem = Cadastro.ProdutosCadastrados.FindIndex(p => p.Contains(ItemSelecionado.ToString()));
+                Produto produtoCompleto = cadastro.AlterarProduto(CampoNome_textBox.Text, CampoCodigo_maskedTextBox.Text, CampoPreco_textBox.Text, IndexItem);
+                cadastro.InserirProdutoEditado(produtoCompleto, IndexItem);
+                ProdutosSelecionados_listBox.Items.Remove(produtoCompleto.Nome);
+            }
             if (ProdutosSelecionados_listBox.Items.Count == 0)
-                Close();
+                Close();    
         }
     }
 }

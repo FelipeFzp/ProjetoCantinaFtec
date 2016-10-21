@@ -142,6 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(349, 313);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -149,7 +150,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditorProdutos";
-            this.Text = "EditorProdutoscs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Editor de Produtos";
             this.Load += new System.EventHandler(this.EditorProdutos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AplicacaoCantinaIUNIFTEC
@@ -60,6 +59,11 @@ namespace AplicacaoCantinaIUNIFTEC
             editor.ItensSelecionadosFormatados = cadastro.FormatarItensDeListView(ItensSelecionados);
             editor.ShowDialog();
             AtualizarListView(Cadastro.ProdutosCadastrados);
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
         }
     }
 }

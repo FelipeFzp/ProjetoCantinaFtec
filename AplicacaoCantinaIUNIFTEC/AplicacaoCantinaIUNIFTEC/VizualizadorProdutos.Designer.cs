@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Opcoes_VizualizadorProdutos_form3));
             this.label2 = new System.Windows.Forms.Label();
             this.CampoBusca_textBox = new System.Windows.Forms.TextBox();
             this.Produtos_listView = new System.Windows.Forms.ListView();
@@ -131,14 +132,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(497, 362);
             this.Controls.Add(this.EditarItens_button);
             this.Controls.Add(this.DeletarItens_button);
             this.Controls.Add(this.Produtos_listView);
             this.Controls.Add(this.CampoBusca_textBox);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Opcoes_VizualizadorProdutos_form3";
             this.Text = "Produtos Cadastrados";
